@@ -46,47 +46,47 @@ public class SuperTable{
 	  admin.createTable(tableDescriptor);
 
       // Instantiating HTable class
-	  HTable hTable = new HTable(config, "powers");
+	  HTable hTable = new HTable(con, "powers");
      
       // Repeat these steps as many times as necessary
 
 	  // Instantiating Put class
 	  // Hint: Accepts a row name
-	  Put p = new Put(Bytes.toBytes("row1"));
+	  Put p1 = new Put(Bytes.toBytes("row1"));
 
 	  // Add values using add() method
 	  // Hints: Accepts column family name, qualifier/row name ,value
-	  p.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes("superman"));
-	  p.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes("strength"));
-	  p.add(Bytes.toBytes("professional"),Bytes.toBytes("name"), Bytes.toBytes("clark"));
-	  p.add(Bytes.toBytes("professional"),Bytes.toBytes("xp"), Bytes.toBytes("100"));
+	  p1.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes("superman"));
+	  p1.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes("strength"));
+	  p1.add(Bytes.toBytes("professional"),Bytes.toBytes("name"), Bytes.toBytes("clark"));
+	  p1.add(Bytes.toBytes("professional"),Bytes.toBytes("xp"), Bytes.toBytes("100"));
 
       // Save the table
-	  hTable.put(p);
+	  hTable.put(p1);
 	  
-	  Put p = new Put(Bytes.toBytes("row2"));
+	  Put p2 = new Put(Bytes.toBytes("row2"));
 
 	  // Add values using add() method
 	  // Hints: Accepts column family name, qualifier/row name ,value
-	  p.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes("batman"));
-	  p.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes("money"));
-	  p.add(Bytes.toBytes("professional"),Bytes.toBytes("name"), Bytes.toBytes("bruce"));
-	  p.add(Bytes.toBytes("professional"),Bytes.toBytes("xp"), Bytes.toBytes("50"));
+	  p2.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes("batman"));
+	  p2.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes("money"));
+	  p2.add(Bytes.toBytes("professional"),Bytes.toBytes("name"), Bytes.toBytes("bruce"));
+	  p2.add(Bytes.toBytes("professional"),Bytes.toBytes("xp"), Bytes.toBytes("50"));
 
       // Save the table
-	  hTable.put(p);
+	  hTable.put(p2);
 
-	  Put p = new Put(Bytes.toBytes("row3"));
+	  Put p3 = new Put(Bytes.toBytes("row3"));
 
 	  // Add values using add() method
 	  // Hints: Accepts column family name, qualifier/row name ,value
-	  p.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes("wolverine"));
-	  p.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes("healing"));
-	  p.add(Bytes.toBytes("professional"),Bytes.toBytes("name"), Bytes.toBytes("logan"));
-	  p.add(Bytes.toBytes("professional"),Bytes.toBytes("xp"), Bytes.toBytes("75"));
+	  p3.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"), Bytes.toBytes("wolverine"));
+	  p3.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes("healing"));
+	  p3.add(Bytes.toBytes("professional"),Bytes.toBytes("name"), Bytes.toBytes("logan"));
+	  p3.add(Bytes.toBytes("professional"),Bytes.toBytes("xp"), Bytes.toBytes("75"));
 
       // Save the table
-	  hTable.put(p);
+	  hTable.put(p3);
 	
       // Close table
 
