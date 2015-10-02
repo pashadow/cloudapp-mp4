@@ -94,16 +94,16 @@ public class SuperTable{
 	  Scan scan = new Scan();
      
       // Scan the required columns
-      scan.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("name"));
-      scan.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("city"));
+      scan.addColumn(Bytes.toBytes("personal"), Bytes.toBytes("hero"));
 
       // Get the scan result
 	  ResultScanner scanner = hTable.getScanner(scan);
 
       // Read values from scan result
-	  for (Result result = scanner.next(); result != null; result = scanner.next())
-      // Print scan result
-	  System.out.println("Found row : " + result);
+	  for (Result result = scanner.next(); result != null; result = scanner.next()) {
+		  // Print scan result
+		  System.out.println("Found row : " + result);
+	  }
  
       // Close the scanner
 	  scanner.close();
